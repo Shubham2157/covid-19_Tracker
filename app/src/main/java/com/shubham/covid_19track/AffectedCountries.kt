@@ -42,7 +42,7 @@ class AffectedCountries : AppCompatActivity() {
         fetchData()
         listView!!.setOnItemClickListener(AdapterView.OnItemClickListener { parent, view, position, id ->
             startActivity(
-                Intent(applicationContext, DetailActivityActivity::class.java).putExtra(
+                Intent(applicationContext, DetailActivity::class.java).putExtra(
                     "position",
                     position
                 )
