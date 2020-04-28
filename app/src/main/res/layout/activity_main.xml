@@ -464,7 +464,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
-        android:background="#3e8bff"
+        android:background="@color/color_one"
         android:text="Track countries"
         android:textColor="@android:color/white"
         android:textSize="18sp"
