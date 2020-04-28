@@ -12,7 +12,7 @@ class OnBoardingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_on_boarding)
 
         world_layout.setOnClickListener {
-            startActivity(Intent(applicationContext, AffectedCountries::class.java))
+            startActivity(Intent(applicationContext, MainActivity::class.java))
 
         }
     }
