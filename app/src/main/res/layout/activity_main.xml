@@ -128,17 +128,18 @@
             android:layout_height="match_parent"
 
             >
+
             <com.leo.simplearcloader.SimpleArcLoader
-                android:visibility="visible"
                 android:id="@+id/loader"
+                android:layout_width="58dp"
+                android:layout_height="79dp"
                 android:layout_centerInParent="true"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:arc_style="complete_arc"
-                app:arc_speed="medium"
-                app:arc_thickness="7dp"
+                android:visibility="visible"
                 app:arc_margin="3dp"
-                >
+                app:arc_speed="medium"
+                app:arc_style="complete_arc"
+                app:arc_thickness="7dp">
+
             </com.leo.simplearcloader.SimpleArcLoader>
 
             <ScrollView
