@@ -2,12 +2,16 @@ package com.shubham.covid_19track.India
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.android.volley.Request
 import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.shubham.covid_19track.R
 import org.json.JSONException
@@ -27,7 +31,7 @@ class DashBoardActivity : AppCompatActivity() {
     private  var card_district:CardView? = null
     private  var card_myths:CardView? = null
     private var requestQueue: RequestQueue? = null
-    private val response1: JSONObject? = null
+    private var response1: JSONObject? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,11 +77,11 @@ class DashBoardActivity : AppCompatActivity() {
             }
         }
 
-        card_about!!.setOnClickListener {
-            val intent = Intent(this@DashBoardActivity, AboutUs::class.java)
-            startActivity(intent)
-        }
-
+        //card_about!!.setOnClickListener {
+          //  val intent = Intent(this@DashBoardActivity, AboutUs::class.java)
+            //startActivity(intent)
+  //      }
+//
         card_state!!.setOnClickListener {
             val intent = Intent(this@DashBoardActivity, StateWiseReport::class.java)
             startActivity(intent)
@@ -95,5 +99,28 @@ class DashBoardActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
         }
+    }
+    private fun parseJson() {
+        val url = "https://api.covid19india.org/data.json"
+        val request = JsonObjectRequest(
+            Request.Method.GET, url, null
+            , Response.Listener { response ->
+                response1 = response
+                try {
+                    val array = response.getJSONArray("statewise")
+                    val `object` = array.getJSONObject(0)
+                    Log.d("dataaa", `object`.toString())
+                    txt_active!!.text = `object`.getString("active")
+                    txt_total!!.text = `object`.getString("confirmed")
+                    txt_recovered!!.text = `object`.getString("recovered")
+                    txt_deaths!!.text = `object`.getString("deaths")
+                    val lastUpdated =
+                        "Last Updated: " + `object`.getString("lastupdatedtime")
+                    txt_updated!!.text = lastUpdated
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+            }, Response.ErrorListener { error -> error.printStackTrace() })
+        requestQueue!!.add(request)
     }
 }
