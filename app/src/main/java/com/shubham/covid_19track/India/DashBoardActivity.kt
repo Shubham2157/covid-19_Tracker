@@ -51,10 +51,6 @@ class DashBoardActivity : AppCompatActivity() {
         card_myths = findViewById(R.id.card_myths)
 
 
-        val toast1 = Toast.makeText(this, "Not Official Government data. Visit Info.", Toast.LENGTH_LONG)
-        toast1.setGravity(Gravity.CENTER, 0, 0)
-        toast1.show()
-
         requestQueue = Volley.newRequestQueue(this)
         parseJson()
 
