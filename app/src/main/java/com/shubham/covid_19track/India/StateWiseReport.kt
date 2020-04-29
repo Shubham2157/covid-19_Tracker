@@ -25,7 +25,7 @@ class StateWiseReport : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_state_wise_report)
 
-        recyclerView!!.layoutManager = LinearLayoutManager(this)
+        recyclerView?.layoutManager = LinearLayoutManager(this)
         requestQueue = Volley.newRequestQueue(this)
         parseJson()
     }
@@ -33,9 +33,7 @@ class StateWiseReport : AppCompatActivity() {
     private fun parseJson() {
         val url = "https://api.covid19india.org/data.json"
         val request = JsonObjectRequest(
-            Request.Method.GET,
-            url,
-            null,
+            Request.Method.GET, url, null,
             Response.Listener { response ->
                 try {
                     val array = response.getJSONArray("statewise")
@@ -45,13 +43,13 @@ class StateWiseReport : AppCompatActivity() {
                         array.toString(),
                         Array<StateData>::class.java
                     )
-                    recyclerView!!.adapter = myAdapter(stateData)
+                    recyclerView?.adapter = myAdapter(stateData)
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }
             },
             Response.ErrorListener { }
         )
-        requestQueue!!.add(request)
+        requestQueue?.add(request)
     }
 }

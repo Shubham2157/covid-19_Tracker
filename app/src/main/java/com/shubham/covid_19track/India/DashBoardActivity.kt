@@ -118,6 +118,7 @@ class DashBoardActivity : AppCompatActivity() {
         val request = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener { response ->
+                response1 = response
                 try {
                     val array = response.getJSONArray("statewise")
                     val `object` = array.getJSONObject(0)
