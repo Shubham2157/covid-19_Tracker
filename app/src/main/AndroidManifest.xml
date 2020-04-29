@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".India.TodayCases"></activity>
+        <activity android:name=".India.TestsReport"></activity>
+        <activity android:name=".India.TodayCases" />
         <activity android:name=".India.DashBoardActivity" />
         <activity android:name=".OnBoardingActivity">
             <intent-filter>
