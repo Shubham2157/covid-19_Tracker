@@ -35,12 +35,12 @@ class DistrictWise : AppCompatActivity() {
         no_cases_animation = findViewById(R.id.no_cases_animation)
         txt_no_cases = findViewById(R.id.txt_no_cases)
 
-        no_cases_animation!!.setVisibility(View.INVISIBLE)
-        txt_no_cases!!.setVisibility(View.INVISIBLE)
+        no_cases_animation!!.visibility = View.INVISIBLE
+        txt_no_cases!!.visibility = View.INVISIBLE
 
-        districtRecycler!!.setLayoutManager(LinearLayoutManager(this))
+        districtRecycler!!.layoutManager = LinearLayoutManager(this)
         stateName = intent.getStringExtra("stateName")
-        txt_state_name!!.setText(stateName)
+        txt_state_name!!.text = stateName
         requestQueue = Volley.newRequestQueue(this)
         parseJson()
 

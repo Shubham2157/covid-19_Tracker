@@ -16,7 +16,7 @@ import org.json.JSONException
 
 class StateWiseReport : AppCompatActivity() {
 
-    private val recyclerView: RecyclerView? = null
+    private var recyclerView: RecyclerView? = null
     private var requestQueue: RequestQueue? = null
     private lateinit var stateData: Array<StateData>
 
@@ -25,7 +25,8 @@ class StateWiseReport : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_state_wise_report)
 
-        recyclerView?.layoutManager = LinearLayoutManager(this)
+        recyclerView = findViewById(R.id.recycler)
+        recyclerView!!.setLayoutManager(LinearLayoutManager(this))
         requestQueue = Volley.newRequestQueue(this)
         parseJson()
     }

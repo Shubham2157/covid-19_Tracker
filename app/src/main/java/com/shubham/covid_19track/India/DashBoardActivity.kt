@@ -105,13 +105,9 @@ class DashBoardActivity : AppCompatActivity() {
             startActivity(intent)
        }
 
-      //  card_myths!!.setOnClickListener {
-      //      Toast.makeText(
-       //         this@DashBoardActivity,
-       //         "Coming Soon...",
-       //         Toast.LENGTH_LONG
-       //     ).show()
-      //  }
+        card_myths!!.setOnClickListener {
+            Toast.makeText(this@DashBoardActivity, "Coming Soon...", Toast.LENGTH_LONG).show()
+        }
     }
     private fun parseJson() {
         val url = "https://api.covid19india.org/data.json"
