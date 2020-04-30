@@ -1,4 +1,4 @@
-package com.shubham.covid_19track
+package com.shubham.covid_19track.world
 
 class CountryModel {
     var flag: String? = null

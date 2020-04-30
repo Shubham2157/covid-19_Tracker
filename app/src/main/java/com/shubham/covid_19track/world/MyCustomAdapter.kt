@@ -1,4 +1,4 @@
-package com.shubham.covid_19track
+package com.shubham.covid_19track.world
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.shubham.covid_19track.R
 import java.util.ArrayList
 
 class MyCustomAdapter(context: Context, private val countryModelsList: List<CountryModel>) : ArrayAdapter<CountryModel?>(context, R.layout.list_custom_item, countryModelsList) {

@@ -1,4 +1,4 @@
-package com.shubham.covid_19track
+package com.shubham.covid_19track.world
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +16,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.leo.simplearcloader.SimpleArcLoader
+import com.shubham.covid_19track.R
 import org.json.JSONArray
 import org.json.JSONException
 import java.util.ArrayList

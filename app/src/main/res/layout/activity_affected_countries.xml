@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/color_white"
     android:layout_height="match_parent"
-    tools:context=".AffectedCountries">
+    tools:context=".world.AffectedCountries">
 
     <EditText
         android:layout_width="match_parent"

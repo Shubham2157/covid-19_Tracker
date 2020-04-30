@@ -25,9 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".AffectedCountries" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".world.DetailActivity" />
+        <activity android:name=".world.AffectedCountries" />
+        <activity android:name=".world.MainActivity" />
     </application>
 
 </manifest>

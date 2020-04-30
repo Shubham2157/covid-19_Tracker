@@ -1,10 +1,11 @@
-package com.shubham.covid_19track
+package com.shubham.covid_19track.world
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
+import com.shubham.covid_19track.R
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 

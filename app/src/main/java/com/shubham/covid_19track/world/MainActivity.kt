@@ -1,4 +1,4 @@
-package com.shubham.covid_19track
+package com.shubham.covid_19track.world
 
 import android.content.Intent
 import android.graphics.Color
@@ -13,6 +13,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.leo.simplearcloader.SimpleArcLoader
+import com.shubham.covid_19track.R
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 import org.json.JSONException
