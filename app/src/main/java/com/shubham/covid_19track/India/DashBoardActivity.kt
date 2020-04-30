@@ -73,11 +73,8 @@ class DashBoardActivity : AppCompatActivity() {
             val intent = Intent(this@DashBoardActivity, TestsReport::class.java)
             try {
                 val array = response1!!.getJSONArray("tested")
-                val `object` = array.getJSONObject(array.length() - 1)
-                intent.putExtra(
-                    "totalIndividuals",
-                   `object`.getString("totalindividualstested")
-                )
+                val `object` = array.getJSONObject(0)
+                intent.putExtra("totalIndividuals",`object`.getString("totalindividualstested"))
                 intent.putExtra("totalPositive", `object`.getString("totalpositivecases"))
                intent.putExtra("lastUpdated", `object`.getString("updatetimestamp"))
                 startActivity(intent)
