@@ -50,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
         tvTotalDeaths!!.setText(AffectedCountries.countryModelsList[positionCountry].deaths)
         tvTodayDeaths!!.setText(AffectedCountries.countryModelsList[positionCountry].todayDeaths)
 
-        pieChart!!.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#FFA726")))
+        pieChart!!.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
         pieChart!!.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
         pieChart!!.addPieSlice(PieModel("Deaths", tvTotalDeaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
         pieChart!!.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
