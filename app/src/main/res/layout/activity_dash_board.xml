@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/color_two"
         android:padding="10dp">
 
         <TextView
@@ -59,6 +60,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="#76D4D7D7"
                         android:orientation="vertical">
 
                         <TextView
@@ -98,6 +100,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="#76D4D7D7"
                         android:orientation="vertical">
 
                         <TextView
@@ -146,6 +149,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="#76D4D7D7"
                         android:orientation="vertical">
 
                         <TextView
@@ -186,6 +190,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="#76D4D7D7"
                         android:orientation="vertical">
 
                         <TextView
@@ -236,6 +241,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="#AAA9A9"
                         android:orientation="vertical">
 
                         <TextView
@@ -268,6 +274,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="#AAA9A9"
                         android:orientation="vertical">
 
                         <TextView
@@ -307,6 +314,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="#AAA9A9"
                         android:orientation="vertical">
 
                         <TextView
@@ -338,6 +346,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="#AAA9A9"
                         android:orientation="vertical">
 
                         <TextView
