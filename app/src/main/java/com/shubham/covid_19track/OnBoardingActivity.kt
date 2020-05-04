@@ -21,5 +21,8 @@ class OnBoardingActivity : AppCompatActivity() {
         india_layout.setOnClickListener {
             startActivity(Intent(applicationContext, DashBoardActivity::class.java))
         }
+        myth_buster_layout.setOnClickListener {
+            startActivity(Intent(applicationContext, MythBusterActivity::class.java))
+        }
     }
 }
