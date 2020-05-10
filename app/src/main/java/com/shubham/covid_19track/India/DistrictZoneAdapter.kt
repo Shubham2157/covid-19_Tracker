@@ -25,18 +25,22 @@ class DistrictZoneAdapter (private val zoneData: Array<ZoneData>) : RecyclerView
         i++
         val district = zoneData[i].districtName
         val zone = zoneData[i].getZone()
+        val state = zoneData[i].stateName
         holder.txt_district.text = district
         holder.txt_zone.text = zone
+        holder.txt_state.text = state
     }
 
     class myViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var txt_district: TextView
         var txt_zone: TextView
+        var txt_state: TextView
 
         init {
             txt_district = itemView.findViewById(R.id.txt_district_name)
             txt_zone = itemView.findViewById(R.id.txt_district_zone)
+            txt_state = itemView.findViewById(R.id.txt_state_name)
         }
 
     }
