@@ -406,7 +406,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/card_about"
+                    android:id="@+id/card_zone"
                     android:layout_width="125dp"
                     android:layout_height="105dp"
                     android:layout_margin="15dp"
@@ -429,7 +429,7 @@
                             android:layout_gravity="center_horizontal"
                             android:fontFamily="@font/d"
                             android:gravity="center"
-                            android:text="Info "
+                            android:text="Risk Zone"
                             android:textColor="#000"
                             android:textSize="17sp"
                             android:textStyle="bold" />

@@ -8,21 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.shubham.covid_19track.R
 
-class myAdapter(private val stateData: Array<StateData>) :
-    RecyclerView.Adapter<myAdapter.myViewHolder>() {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): myViewHolder {
+class myAdapter(private val stateData: Array<StateData>) : RecyclerView.Adapter<myAdapter.myViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.recycler_state, parent, false)
         return myViewHolder(view)
     }
 
-    override fun onBindViewHolder(
-        holder: myViewHolder,
-        i: Int
-    ) {
+    override fun onBindViewHolder(holder: myViewHolder, i: Int) {
         var i = i
         i++
         val stateName = stateData[i].stateName

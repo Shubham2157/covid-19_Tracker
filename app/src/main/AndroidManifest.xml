@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MythBusterActivity"></activity>
+        <activity android:name=".India.DistrictWiseZone"></activity>
+        <activity android:name=".India.ZoneStateSelectActivity" />
+        <activity android:name=".MythBusterActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -28,7 +30,7 @@
         <activity android:name=".India.TestsReport" />
         <activity android:name=".India.TodayCases" />
         <activity android:name=".India.DashBoardActivity" />
-        <activity android:name=".OnBoardingActivity"></activity>
+        <activity android:name=".OnBoardingActivity" />
         <activity android:name=".world.DetailActivity" />
         <activity android:name=".world.AffectedCountries" />
         <activity android:name=".world.MainActivity" />

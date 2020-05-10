@@ -10,10 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.shubham.covid_19track.R
 
-class StatesAdapter(
-    private val stateName: Array<String>,
-    private val mContext: Context
-) : RecyclerView.Adapter<StatesAdapter.myViewHolder>() {
+class StatesAdapter(private val stateName: Array<String>, private val mContext: Context) : RecyclerView.Adapter<StatesAdapter.myViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -23,10 +20,7 @@ class StatesAdapter(
         return myViewHolder(view)
     }
 
-    override fun onBindViewHolder(
-        holder: myViewHolder,
-        position: Int
-    ) {
+    override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val name = stateName[position]
         holder.txt_name.text = name
         holder.itemView.setOnClickListener {

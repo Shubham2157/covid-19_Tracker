@@ -14,6 +14,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.shubham.covid_19track.R
+import kotlinx.android.synthetic.main.activity_dash_board.*
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -45,7 +46,7 @@ class DashBoardActivity : AppCompatActivity() {
         txt_updated = findViewById(R.id.txt_updated)
         card_today = findViewById(R.id.card_today)
         card_tests = findViewById(R.id.card_tests)
-        card_about = findViewById(R.id.card_about)
+        card_about = findViewById(R.id.card_zone)
         card_state = findViewById(R.id.card_state)
         card_district = findViewById(R.id.card_district)
         card_myths = findViewById(R.id.card_myths)
@@ -100,6 +101,11 @@ class DashBoardActivity : AppCompatActivity() {
 
         card_myths!!.setOnClickListener {
             Toast.makeText(this@DashBoardActivity, "Coming Soon...", Toast.LENGTH_LONG).show()
+        }
+
+        card_zone!!.setOnClickListener {
+            val intent = Intent(this@DashBoardActivity, DistrictWiseZone::class.java)
+            startActivity(intent)
         }
     }
     private fun parseJson() {

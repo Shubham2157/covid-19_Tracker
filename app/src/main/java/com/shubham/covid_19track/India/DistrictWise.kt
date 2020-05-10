@@ -59,8 +59,7 @@ class DistrictWise : AppCompatActivity() {
                     val cases = arrayOfNulls<String>(length)
                     for (i in 0 until length) {
                         district[i] = keys.getString(i)
-                        cases[i] =
-                            districtData.getJSONObject(district[i]).getString("confirmed")
+                        cases[i] = districtData.getJSONObject(district[i]).getString("confirmed")
                     }
                     districtRecycler!!.adapter = DistrictAdapter(district, cases)
                 } catch (e: JSONException) {
