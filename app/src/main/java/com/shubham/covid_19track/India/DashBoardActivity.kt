@@ -3,7 +3,6 @@ package com.shubham.covid_19track.India
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -74,8 +73,8 @@ class DashBoardActivity : AppCompatActivity() {
             val intent = Intent(this@DashBoardActivity, TestsReport::class.java)
             try {
                 val array = response1!!.getJSONArray("tested")
-                val `object` = array.getJSONObject(0)
-                intent.putExtra("totalIndividuals",`object`.getString("totalindividualstested"))
+                val `object` = array.getJSONObject(array.length() - 1)
+                intent.putExtra("totalIndividuals",`object`.getString("totalsamplestested"))
                 intent.putExtra("totalPositive", `object`.getString("totalpositivecases"))
                intent.putExtra("lastUpdated", `object`.getString("updatetimestamp"))
                 startActivity(intent)
@@ -84,11 +83,6 @@ class DashBoardActivity : AppCompatActivity() {
            }
        }
 
-        //card_about!!.setOnClickListener {
-          //  val intent = Intent(this@DashBoardActivity, AboutUs::class.java)
-            //startActivity(intent)
-  //      }
-//
        card_state!!.setOnClickListener {
             val intent = Intent(this@DashBoardActivity, StateWiseReport::class.java)
            startActivity(intent)
