@@ -33,7 +33,7 @@
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:text="green"
-            android:textColor="#000"
+            android:textColor="#FF7F50"
             android:textSize="18sp"
             android:textStyle="bold" />
 
