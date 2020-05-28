@@ -13,50 +13,51 @@
         app:cardElevation="12dp"
         app:cardMaxElevation="12dp">
 
-        <TextView
-            android:id="@+id/txt_district_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="100dp"
-            android:text="Ahmednagar"
-            android:textColor="#000"
 
-            android:textSize="20sp"
-            android:textStyle="bold" />
         <TextView
             android:id="@+id/txt_district_zone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="110dp"
             android:text="green"
             android:textColor="#FF7F50"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <RelativeLayout
+            android:id="@+id/relative_zone"
             android:layout_width="300dp"
             android:layout_height="80dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:background="#807D7D">
 
+            <TextView
+                android:id="@+id/txt_district_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="10dp"
+                android:text="Ahmednagar"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/txt_state_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="60dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="10dp"
             android:text="Jharkhand"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:textColor="#000"
+            android:textSize="18sp"
             android:textStyle="bold" />
-
-        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 

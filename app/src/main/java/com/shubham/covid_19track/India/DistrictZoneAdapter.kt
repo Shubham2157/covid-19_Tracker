@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.shubham.covid_19track.R
@@ -28,14 +29,17 @@ class DistrictZoneAdapter (private val zoneData: Array<ZoneData>) : RecyclerView
         val zone = zoneData[i].getZone()
         if (zone == "Green")
         {
+           holder.relative_zone.setBackgroundColor(Color.parseColor("#008000"))
             holder.txt_zone.setTextColor(Color.parseColor("#008000"))
         }
         if (zone == "Red")
         {
+            holder.relative_zone.setBackgroundColor(Color.parseColor("#FF0000"))
             holder.txt_zone.setTextColor(Color.parseColor("#FF0000"))
         }
         if (zone == "Orange")
         {
+           holder.relative_zone.setBackgroundColor(Color.parseColor("#FFA500"))
             holder.txt_zone.setTextColor(Color.parseColor("#FFA500"))
         }
 
@@ -50,11 +54,13 @@ class DistrictZoneAdapter (private val zoneData: Array<ZoneData>) : RecyclerView
         var txt_district: TextView
         var txt_zone: TextView
         var txt_state: TextView
+        var relative_zone: RelativeLayout
 
         init {
             txt_district = itemView.findViewById(R.id.txt_district_name)
             txt_zone = itemView.findViewById(R.id.txt_district_zone)
             txt_state = itemView.findViewById(R.id.txt_state_name)
+            relative_zone = itemView.findViewById(R.id.relative_zone)
         }
 
     }
