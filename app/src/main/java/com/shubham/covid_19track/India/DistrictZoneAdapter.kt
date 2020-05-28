@@ -1,5 +1,6 @@
 package com.shubham.covid_19track.India
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,19 @@ class DistrictZoneAdapter (private val zoneData: Array<ZoneData>) : RecyclerView
         i++
         val district = zoneData[i].districtName
         val zone = zoneData[i].getZone()
+        if (zone == "Green")
+        {
+            holder.txt_zone.setTextColor(Color.parseColor("#008000"))
+        }
+        if (zone == "Red")
+        {
+            holder.txt_zone.setTextColor(Color.parseColor("#FF0000"))
+        }
+        if (zone == "Orange")
+        {
+            holder.txt_zone.setTextColor(Color.parseColor("#FFA500"))
+        }
+
         val state = zoneData[i].stateName
         holder.txt_district.text = district
         holder.txt_zone.text = zone
