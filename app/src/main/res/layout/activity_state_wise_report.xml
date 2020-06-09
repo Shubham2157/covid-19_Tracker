@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/f"
         android:text="State Wise Cases"
-        android:textColor="#000"
+        android:textColor="#FFF"
         android:textColorLink="#FFFFFF"
         android:textSize="27sp"
         android:textStyle="bold"
