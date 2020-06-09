@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -21,6 +22,8 @@ public class WhoActivity extends AppCompatActivity {
 
         webview = findViewById(R.id.webView);
         progressBar = findViewById(R.id.progressBar);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         webview.setWebViewClient(new WebViewClient());
         webview.loadUrl("https://www.who.int/");
 
@@ -42,4 +45,17 @@ public class WhoActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if (webview.canGoBack())
+        {
+            webview.goBack();
+        }
+        else
+        {
+            super.onBackPressed();
+        }
+    }
+
 }

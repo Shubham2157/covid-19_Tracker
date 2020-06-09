@@ -171,7 +171,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/gov_portal"
             android:paddingTop="24dp"
             android:paddingBottom="24dp"
             android:orientation="horizontal"
@@ -182,6 +181,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/gov_portal"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"

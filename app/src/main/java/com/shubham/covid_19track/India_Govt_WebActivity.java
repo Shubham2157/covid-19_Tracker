@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 
@@ -20,6 +21,8 @@ public class India_Govt_WebActivity extends AppCompatActivity {
 
         webview = findViewById(R.id.webView);
         progressBar = findViewById(R.id.progressBar);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         webview.setWebViewClient(new India_Govt_WebActivity.WebViewClient());
         webview.loadUrl("https://www.mohfw.gov.in/");
 
@@ -39,6 +42,18 @@ public class India_Govt_WebActivity extends AppCompatActivity {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             progressBar.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webview.canGoBack())
+        {
+            webview.goBack();
+        }
+        else
+        {
+            super.onBackPressed();
         }
     }
 }
