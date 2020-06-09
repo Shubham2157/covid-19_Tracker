@@ -7,29 +7,19 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
 
         android:layout_margin="25dp"
         app:cardElevation="12dp"
         app:cardMaxElevation="12dp">
 
 
-        <TextView
-            android:id="@+id/txt_district_zone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="110dp"
-            android:text="green"
-            android:textColor="#FF7F50"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+
 
         <RelativeLayout
             android:id="@+id/relative_zone"
             android:layout_width="300dp"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:background="#807D7D">
@@ -38,11 +28,22 @@
                 android:id="@+id/txt_district_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="10dp"
-                android:text="Ahmednagar"
+                android:layout_centerInParent="true"
+                android:text="Jamtara"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_district_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="40dp"
+                android:text="green"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
@@ -51,8 +52,8 @@
             android:id="@+id/txt_state_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginTop="110dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
             android:text="Jharkhand"
             android:textColor="#000"

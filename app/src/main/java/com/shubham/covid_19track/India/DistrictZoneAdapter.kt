@@ -30,17 +30,14 @@ class DistrictZoneAdapter (private val zoneData: Array<ZoneData>) : RecyclerView
         if (zone == "Green")
         {
            holder.relative_zone.setBackgroundColor(Color.parseColor("#008000"))
-            holder.txt_zone.setTextColor(Color.parseColor("#008000"))
         }
         if (zone == "Red")
         {
             holder.relative_zone.setBackgroundColor(Color.parseColor("#FF0000"))
-            holder.txt_zone.setTextColor(Color.parseColor("#FF0000"))
         }
         if (zone == "Orange")
         {
            holder.relative_zone.setBackgroundColor(Color.parseColor("#FFA500"))
-            holder.txt_zone.setTextColor(Color.parseColor("#FFA500"))
         }
 
         val state = zoneData[i].stateName

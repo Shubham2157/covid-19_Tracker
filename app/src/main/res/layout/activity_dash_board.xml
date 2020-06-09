@@ -71,6 +71,7 @@
                             android:layout_margin="4dp"
                             android:fontFamily="@font/a"
                             android:textColor="#000"
+                            android:text="0"
                             android:textSize="25sp"
                             android:textStyle="bold" />
 
@@ -113,6 +114,7 @@
                             android:fontFamily="@font/a"
                             android:textColor="#000"
                             android:textSize="25sp"
+                            android:text="0"
                             android:textStyle="bold" />
 
                         <TextView
@@ -161,6 +163,7 @@
                             android:layout_margin="4dp"
                             android:fontFamily="@font/a"
                             android:textColor="#000"
+                            android:text="0"
                             android:textSize="25sp"
                             android:textStyle="bold" />
 
@@ -202,6 +205,7 @@
                             android:layout_margin="4dp"
                             android:fontFamily="@font/a"
                             android:textColor="#000"
+                            android:text="0"
                             android:textSize="25sp"
                             android:textStyle="bold" />
 
