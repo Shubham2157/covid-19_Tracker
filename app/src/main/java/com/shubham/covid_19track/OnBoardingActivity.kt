@@ -21,8 +21,12 @@ class OnBoardingActivity : AppCompatActivity() {
         india_layout.setOnClickListener {
             startActivity(Intent(applicationContext, DashBoardActivity::class.java))
         }
-        myth_buster_layout.setOnClickListener {
-            startActivity(Intent(applicationContext, MythBusterActivity::class.java))
+        who_web_layout.setOnClickListener {
+            startActivity(Intent(applicationContext, WhoActivity::class.java))
+        }
+
+        gov_portal.setOnClickListener {
+            startActivity(Intent(applicationContext, India_Govt_WebActivity::class.java))
         }
     }
 }

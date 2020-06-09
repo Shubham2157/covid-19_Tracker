@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#343137</color>
+    <color name="colorPrimary">#4A47A7</color>
     <color name="colorPrimaryDark">#2D2936</color>
-    <color name="colorAccent">#2F3736</color>
+    <color name="colorAccent">#4A47A7</color>
+    <color name="purple">#4A47A7</color>
 
-    <color name="color_one">#33363A</color>
-    <color name="color_white">#49494E</color>
-    <color name="color_two">#676262</color>
+
+    <color name="color_one">#4A47A7</color>
+    <color name="color_white">#4A47A7</color>
+    <color name="color_two">#4A47A7</color>
 
     <color name="cases">#F50005</color>
     <color name="recovered">#66BB6A</color>

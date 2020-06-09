@@ -5,15 +5,15 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 
-class MythBusterActivity : AppCompatActivity() {
+class WhoActivity : AppCompatActivity() {
     private var mywebView: WebView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_myth_buster)
+        setContentView(R.layout.web_view)
         mywebView = findViewById(R.id.webView)
         val webSettings = mywebView!!.settings
         webSettings.javaScriptEnabled = true
-        mywebView!!.loadUrl("https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters")
+        mywebView!!.loadUrl("https://www.who.int/")
         mywebView!!.webViewClient = WebViewClient()
     }
 
