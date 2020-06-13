@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:fontFamily="@font/f"
-        android:text="Covid-19 India"
+        android:text="Covid-19 Tracker"
         android:textColor="#fff"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
