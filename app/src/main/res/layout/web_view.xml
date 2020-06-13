@@ -9,10 +9,11 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:max="3"
-        android:progress="100"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
+        android:max="100"
+        android:progress="50"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true" />

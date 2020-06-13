@@ -39,7 +39,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="330dp"
+        android:layout_height="340dp"
         android:orientation="vertical"
         android:background="@drawable/bg_menu"
         android:layout_marginStart="0dp"
@@ -207,7 +207,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="INDIAN \nGOVT WEB"
+                        android:text="GOVT \nWEBSITE"
                         android:textColor="#FFF"
                         android:textSize="18sp"
                         />
