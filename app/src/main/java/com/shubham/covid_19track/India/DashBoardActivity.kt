@@ -2,27 +2,20 @@ package com.shubham.covid_19track.India
 
 import android.content.Intent
 import android.graphics.Color
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.core.view.isVisible
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.deishelon.roundedbottomsheet.RoundedBottomSheetDialog
-import com.shubham.covid_19track.India_Govt_WebActivity
 import com.shubham.covid_19track.R
-import com.shubham.covid_19track.WhoActivity
-import com.shubham.covid_19track.world.MainActivity
 import kotlinx.android.synthetic.main.activity_dash_board.*
-import kotlinx.android.synthetic.main.activity_on_boarding.*
+import kotlinx.android.synthetic.main.pia_chart_sheet.view.*
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 import org.json.JSONException
@@ -40,7 +33,7 @@ class DashBoardActivity : AppCompatActivity() {
     private  var card_about:CardView? = null
     private  var card_state:CardView? = null
     private  var card_district:CardView? = null
-    private  var card_myths:CardView? = null
+    private  var card_pia:CardView? = null
     private var requestQueue: RequestQueue? = null
     private var response1: JSONObject? = null
 
@@ -61,7 +54,7 @@ class DashBoardActivity : AppCompatActivity() {
         card_about = findViewById(R.id.card_zone)
         card_state = findViewById(R.id.card_state)
         card_district = findViewById(R.id.card_district)
-        card_myths = findViewById(R.id.card_myths)
+        card_pia = findViewById(R.id.card_pia)
         pieChart = findViewById(R.id.piechart)
 
 
@@ -108,17 +101,18 @@ class DashBoardActivity : AppCompatActivity() {
             startActivity(intent)
        }
 
-        card_myths!!.setOnClickListener {
+        card_pia!!.setOnClickListener {
 
-            showHide(cardViewGraph)
+            val mBottomSheetDialog = RoundedBottomSheetDialog(context = this)
+            val sheetView = layoutInflater.inflate(R.layout.pia_chart_sheet, null)
+            mBottomSheetDialog.setContentView(sheetView)
 
-            // cardViewGraph.setVisibility(View.VISIBLE)
-
-           // val mBottomSheetDialog = RoundedBottomSheetDialog(context = this)
-           // val sheetView = layoutInflater.inflate(R.layout.bottomsheet, null)
-           // mBottomSheetDialog.setContentView(sheetView)
-           // mBottomSheetDialog.show()
-
+            sheetView.piechart.addPieSlice(PieModel("Cases", txt_total!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
+            sheetView.piechart.addPieSlice(PieModel("Recoverd", txt_recovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
+            sheetView.piechart.addPieSlice(PieModel("Deaths", txt_deaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
+            sheetView.piechart.addPieSlice(PieModel("Cases", txt_active!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
+            pieChart!!.startAnimation()
+            mBottomSheetDialog.show()
 
 
 
@@ -144,11 +138,6 @@ class DashBoardActivity : AppCompatActivity() {
                     txt_recovered!!.text = `object`.getString("recovered")
                     txt_deaths!!.text = `object`.getString("deaths")
 
-                    pieChart!!.addPieSlice(PieModel("Cases", txt_total!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
-                    pieChart!!.addPieSlice(PieModel("Recoverd", txt_recovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
-                    pieChart!!.addPieSlice(PieModel("Deaths", txt_deaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
-                    pieChart!!.addPieSlice(PieModel("Active", txt_active!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
-                    pieChart!!.startAnimation()
 
                     val lastUpdated = "Last Updated: " + `object`.getString("lastupdatedtime")
                     txt_updated!!.text = lastUpdated
@@ -159,11 +148,4 @@ class DashBoardActivity : AppCompatActivity() {
         requestQueue!!.add(request)
     }
 
-    fun showHide(view:View) {
-        view.visibility = if (view.visibility == View.VISIBLE){
-            View.INVISIBLE
-        } else{
-            View.VISIBLE
-        }
-    }
 }

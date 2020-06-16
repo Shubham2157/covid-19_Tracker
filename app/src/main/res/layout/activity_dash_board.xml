@@ -380,7 +380,7 @@
                 android:padding="5dp">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/card_myths"
+                    android:id="@+id/card_pia"
                     android:layout_width="125dp"
                     android:layout_height="105dp"
                     android:layout_margin="15dp"
