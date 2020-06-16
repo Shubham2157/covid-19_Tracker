@@ -11,11 +11,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".India_Govt_WebActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".WhoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
