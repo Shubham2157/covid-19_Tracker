@@ -32,5 +32,9 @@ class OnBoardingActivity : AppCompatActivity() {
         about.setOnClickListener {
             startActivity(Intent(applicationContext,AboutUsActivity::class.java))
         }
+
+        help_no.setOnClickListener {
+            startActivity(Intent(applicationContext,HelpLineNoActivity::class.java))
+        }
     }
 }

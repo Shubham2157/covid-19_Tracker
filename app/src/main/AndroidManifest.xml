@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".HelpLineNoActivity"></activity>
+        <activity android:name=".AboutUsActivity" />
         <activity
             android:name=".India_Govt_WebActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

@@ -89,6 +89,7 @@ class DashBoardActivity : AppCompatActivity() {
             } catch (e: JSONException) {
                e.printStackTrace()
            }
+
        }
 
        card_state!!.setOnClickListener {

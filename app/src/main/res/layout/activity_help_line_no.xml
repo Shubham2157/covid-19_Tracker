@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_two"
-    tools:context=".India.DashBoardActivity">
-
+    tools:context=".HelpLineNoActivity">
 
     <TextView
         android:id="@+id/textView8"
@@ -14,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/f"
-        android:text="Diatrict wise zone"
+        android:text="Help Line No"
         android:textColor="#FFF"
         android:textColorLink="#FFFFFF"
         android:textSize="27sp"
@@ -22,19 +21,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         />
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler1"
-        android:layout_width="match_parent"
-        android:layout_height="592dp"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp">
-
-    </androidx.recyclerview.widget.RecyclerView>
 
     <com.leo.simplearcloader.SimpleArcLoader
         android:id="@+id/progressBar"
@@ -48,5 +34,17 @@
         app:arc_thickness="7dp">
 
     </com.leo.simplearcloader.SimpleArcLoader>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_help_no"
+        android:layout_width="match_parent"
+        android:layout_height="592dp"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="20dp"/>
+
 
 </RelativeLayout>

@@ -12,9 +12,6 @@
         app:cardElevation="12dp"
         app:cardMaxElevation="12dp">
 
-
-
-
         <RelativeLayout
             android:id="@+id/relative_zone"
             android:layout_width="300dp"

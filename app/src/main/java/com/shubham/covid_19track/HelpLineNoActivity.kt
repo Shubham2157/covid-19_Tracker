@@ -1,9 +1,10 @@
-package com.shubham.covid_19track.India
+package com.shubham.covid_19track
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -14,49 +15,52 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.leo.simplearcloader.SimpleArcLoader
-import com.shubham.covid_19track.R
+import com.shubham.covid_19track.India.DistrictZoneAdapter
+import com.shubham.covid_19track.India.ZoneData
+import kotlinx.android.synthetic.main.activity_help_line_no.*
 import org.json.JSONException
 
-class StateWiseReport : AppCompatActivity() {
+class HelpLineNoActivity : AppCompatActivity() {
 
     private var recyclerView: RecyclerView? = null
     private var requestQueue: RequestQueue? = null
     var simpleArcLoader: SimpleArcLoader? = null
-    private lateinit var stateData: Array<StateData>
-
+    private lateinit var helpData: Array<HelpData>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_state_wise_report)
+        setContentView(R.layout.activity_help_line_no)
 
-        recyclerView = findViewById(R.id.recycler)
+        recyclerView = findViewById(R.id.recycler_help_no)
         simpleArcLoader = findViewById(R.id.progressBar)
         recyclerView!!.setLayoutManager(LinearLayoutManager(this))
         requestQueue = Volley.newRequestQueue(this)
+
         parseJson()
+
     }
 
     private fun parseJson() {
 
         simpleArcLoader!!.start()
 
-        val url = "https://api.covid19india.org/data.json"
+        val url = "https://api.rootnet.in/covid19-in/contacts"
         val request = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener { response ->
                 try {
-                    val array = response.getJSONArray("statewise")
+                    val array = response.getJSONObject("data").getJSONObject("contacts").getJSONArray("regional")
                     val gsonBuilder = GsonBuilder()
                     val gson: Gson = gsonBuilder.create()
-                    stateData = gson.fromJson(
+                    helpData = gson.fromJson(
                         array.toString(),
-                        Array<StateData>::class.java
+                        Array<HelpData>::class.java
                     )
 
                     simpleArcLoader!!.stop()
                     simpleArcLoader!!.visibility = View.GONE
 
-                    recyclerView?.adapter = myAdapter(stateData)
+                    recyclerView?.adapter = HelpAdaptor(helpData)
                 } catch (e: JSONException) {
                     e.printStackTrace()
                     simpleArcLoader!!.stop()
@@ -67,10 +71,11 @@ class StateWiseReport : AppCompatActivity() {
                 simpleArcLoader!!.stop()
                 simpleArcLoader!!.visibility = View.GONE
 
-                Toast.makeText(this@StateWiseReport, error.message, Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(this@HelpLineNoActivity, error.message, Toast.LENGTH_SHORT).show()
             }
         )
         requestQueue?.add(request)
     }
+
 }
+

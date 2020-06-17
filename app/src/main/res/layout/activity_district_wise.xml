@@ -43,6 +43,20 @@
         android:layout_below="@id/textView12"
         android:layout_marginTop="10dp" />
 
+    <com.leo.simplearcloader.SimpleArcLoader
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        app:arc_margin="3dp"
+        app:arc_speed="medium"
+        app:arc_style="complete_arc"
+        app:arc_thickness="7dp">
+
+    </com.leo.simplearcloader.SimpleArcLoader>
+
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/no_cases_animation"
         android:layout_width="336dp"

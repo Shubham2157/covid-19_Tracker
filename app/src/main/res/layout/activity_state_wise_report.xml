@@ -33,8 +33,19 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="20dp">
-
-
     </androidx.recyclerview.widget.RecyclerView>
+
+    <com.leo.simplearcloader.SimpleArcLoader
+        android:id="@+id/progressBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        app:arc_margin="3dp"
+        app:arc_speed="medium"
+        app:arc_style="complete_arc"
+        app:arc_thickness="7dp">
+
+    </com.leo.simplearcloader.SimpleArcLoader>
 
 </RelativeLayout>

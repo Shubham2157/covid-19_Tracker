@@ -217,6 +217,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/help_no"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
@@ -242,7 +243,7 @@
                         android:layout_marginLeft="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Myth \nBuster"
+                        android:text="Helpline \nNumber"
                         android:textColor="#FFF"
                         android:textSize="18sp"
                         />
