@@ -100,6 +100,14 @@
             android:layout_marginTop="90dp"
             android:background="@drawable/instagram" />
 
+        <ImageView
+            android:id="@+id/linkedin_shubham"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/linkedin" />
+
     </androidx.cardview.widget.CardView>
 
 

@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_about_us.*
+import java.security.AccessController.getContext
 
 
 class AboutUsActivity : AppCompatActivity() {
@@ -54,6 +55,10 @@ class AboutUsActivity : AppCompatActivity() {
             {
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/kumarjhashubham0000/?hl=en")))
             }
+        }
+
+        linkedin_shubham.setOnClickListener {
+            openLinkedInPage("shubham-kumar-jha-528367191")
         }
     }
 
@@ -105,6 +110,21 @@ class AboutUsActivity : AppCompatActivity() {
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
         }
+    }
+
+    fun openLinkedInPage(linkedId: String) {
+        var intent =
+            Intent(Intent.ACTION_VIEW, Uri.parse("linkedin://add/%@$linkedId"))
+        val packageManager: PackageManager = applicationContext.packageManager
+        val list =
+            packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
+        if (list.isEmpty()) {
+            intent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("http://www.linkedin.com/profile/view?id=$linkedId")
+            )
+        }
+        startActivity(intent)
     }
 
 }
