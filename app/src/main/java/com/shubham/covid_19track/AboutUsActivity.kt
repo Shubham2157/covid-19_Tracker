@@ -1,13 +1,15 @@
 package com.shubham.covid_19track
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_about_us.*
+
 
 class AboutUsActivity : AppCompatActivity() {
 
@@ -16,7 +18,7 @@ class AboutUsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_about_us)
 
         mail_shubham.setOnClickListener {
-            composeEmail(arrayOf("kumarshubhamjha2157@gmail.com"),"Regarding Your App")
+            composeEmail(arrayOf("kumarshubhamjha2157@gmail.com"),"Regarding Your App Covid !9 Tracker ")
         }
 
         whatsapp_shubham.setOnClickListener{
@@ -31,7 +33,28 @@ class AboutUsActivity : AppCompatActivity() {
             openFacebook(applicationContext , "100009608210873","subham.kishan.12")
         }
 
+        web_shubham.setOnClickListener {
+            openWebPage("https://shubhamkumarjha.herokuapp.com/")
+        }
 
+        insta_shubham.setOnClickListener {
+
+            // from ==> https://stackoverflow.com/questions/21505941/intent-to-open-instagram-user-profile-on-android
+
+            val uri = Uri.parse("http://instagram.com/_u/kumarjhashubham0000/?hl=en")
+            val likeIng = Intent(Intent.ACTION_VIEW, uri)
+
+            likeIng.setPackage("com.instagram.android")
+
+            try {
+                startActivity(likeIng)
+                }
+
+            catch (e: ActivityNotFoundException)
+            {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://instagram.com/kumarjhashubham0000/?hl=en")))
+            }
+        }
     }
 
     private fun composeEmail(addresses: Array<String>, subject: String) {
@@ -75,4 +98,13 @@ class AboutUsActivity : AppCompatActivity() {
             )
         }
     }
+
+    fun openWebPage(url: String?) {
+        val webpage = Uri.parse(url)
+        val intent = Intent(Intent.ACTION_VIEW, webpage)
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
+    }
+
 }

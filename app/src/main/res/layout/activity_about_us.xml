@@ -54,7 +54,7 @@
             android:layout_width="150dp"
             android:layout_height="20dp"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:text="Shubham Kuamr Jha"
             android:textColor="@android:color/black"
             android:textSize="15sp"
@@ -65,7 +65,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/gmail" />
 
         <ImageView
@@ -73,7 +73,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="210dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/whatsapp" />
 
         <ImageView
@@ -81,8 +81,24 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="270dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/facebook" />
+
+        <ImageView
+            android:id="@+id/web_shubham"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/website" />
+
+        <ImageView
+            android:id="@+id/insta_shubham"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/instagram" />
 
     </androidx.cardview.widget.CardView>
 
