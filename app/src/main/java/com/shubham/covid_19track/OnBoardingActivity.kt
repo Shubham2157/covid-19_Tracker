@@ -28,5 +28,9 @@ class OnBoardingActivity : AppCompatActivity() {
         gov_portal.setOnClickListener {
             startActivity(Intent(applicationContext, India_Govt_WebActivity::class.java))
         }
+
+        about.setOnClickListener {
+            startActivity(Intent(applicationContext,AboutUsActivity::class.java))
+        }
     }
 }

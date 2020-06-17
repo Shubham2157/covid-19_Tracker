@@ -253,6 +253,7 @@
 
 
             <LinearLayout
+                android:id="@+id/about"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
