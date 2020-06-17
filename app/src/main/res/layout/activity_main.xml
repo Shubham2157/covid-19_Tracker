@@ -459,11 +459,8 @@
                         />
 
                 </LinearLayout>
-
             </ScrollView>
-
         </RelativeLayout>
-
 
     </androidx.cardview.widget.CardView>
 
@@ -476,7 +473,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
-        android:background="@color/color_one"
+        android:background="@color/card"
         android:text="Track countries"
         android:textColor="@android:color/white"
         android:textSize="18sp"

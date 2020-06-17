@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_about_us.*
-import java.security.AccessController.getContext
 
 
 class AboutUsActivity : AppCompatActivity() {
@@ -19,7 +18,7 @@ class AboutUsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_about_us)
 
         mail_shubham.setOnClickListener {
-            composeEmail(arrayOf("kumarshubhamjha2157@gmail.com"),"Regarding Your App Covid !9 Tracker ")
+            composeEmail(arrayOf("kumarshubhamjha2157@gmail.com"),"Regarding Your App Covid 19 Tracker ")
         }
 
         whatsapp_shubham.setOnClickListener{
