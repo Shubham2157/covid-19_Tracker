@@ -72,7 +72,7 @@
                             android:layout_margin="4dp"
                             android:fontFamily="@font/a"
                             android:textColor="#000"
-                            android:text="0"
+                            android:text="@string/fetch"
                             android:textSize="25sp"
                             android:textStyle="bold" />
 
@@ -115,7 +115,7 @@
                             android:fontFamily="@font/a"
                             android:textColor="#000"
                             android:textSize="25sp"
-                            android:text="0"
+                            android:text="@string/fetch"
                             android:textStyle="bold" />
 
                         <TextView
@@ -164,7 +164,7 @@
                             android:layout_margin="4dp"
                             android:fontFamily="@font/a"
                             android:textColor="#000"
-                            android:text="0"
+                            android:text="@string/fetch"
                             android:textSize="25sp"
                             android:textStyle="bold" />
 
@@ -205,8 +205,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="4dp"
                             android:fontFamily="@font/a"
-                            android:textColor="#000"
-                            android:text="0"
+                            android:textColor="#000000"
+                            android:text="@string/fetch"
                             android:textSize="25sp"
                             android:textStyle="bold" />
 
@@ -246,7 +246,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="#AAA9A9"
+                        android:background="@color/card"
                         android:orientation="vertical">
 
                         <TextView
@@ -279,7 +279,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="#AAA9A9"
+                        android:background="@color/card"
                         android:orientation="vertical">
 
                         <TextView
@@ -319,7 +319,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="#AAA9A9"
+                        android:background="@color/card"
                         android:orientation="vertical">
 
                         <TextView
@@ -351,7 +351,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="#AAA9A9"
+                        android:background="@color/card"
                         android:orientation="vertical">
 
                         <TextView
@@ -393,6 +393,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
+                        android:background="@color/card"
                         android:orientation="vertical">
 
                         <TextView
@@ -425,6 +426,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
+                        android:background="@color/card"
                         android:gravity="center"
                         android:orientation="vertical">
 
