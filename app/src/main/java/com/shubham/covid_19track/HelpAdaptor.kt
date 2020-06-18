@@ -3,16 +3,19 @@ package com.shubham.covid_19track
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.help_no_list.view.*
 
 class HelpAdaptor (private val helpData: Array<HelpData>) : RecyclerView.Adapter<HelpAdaptor.myViewHolder>() {
 
+
+    var onClickListener:(String)->Unit={}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
        val  inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.help_no_list, parent, false)
         return myViewHolder(view)
+
     }
 
     override fun getItemCount(): Int {
@@ -26,21 +29,20 @@ class HelpAdaptor (private val helpData: Array<HelpData>) : RecyclerView.Adapter
         val state = helpData[i].getLoc()
         val mob = helpData[i].getNumber()
 
-        holder.txt_ph.text = mob
-        holder.txt_state.text = state
+        holder.bind(state,mob,onClickListener)
 
     }
 
 
     class myViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var txt_ph: TextView
-        var txt_state: TextView
-
-
-        init {
-            txt_ph = itemView.findViewById(R.id.txt_mob_no)
-            txt_state = itemView.findViewById(R.id.txt_state_name)
+        fun bind(state:String,number:String,onclick:(String)->Unit){
+            itemView.txt_mob_no.text = number
+            itemView.txt_state_name.text = state
+            itemView.call_btn.setOnClickListener {
+                val first = number.split(",").first()
+                onclick(first)
+            }
         }
 
     }
