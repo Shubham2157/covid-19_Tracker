@@ -1,4 +1,4 @@
-package com.shubham.covid_19track;
+package com.shubham.covid_19track.services;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -14,6 +14,8 @@ import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.shubham.covid_19track.OnBoardingActivity;
+import com.shubham.covid_19track.R;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -29,7 +31,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private void generateNotification(String body, String title) {
 
-        Intent intent = new Intent(this,OnBoardingActivity.class);
+        Intent intent = new Intent(this, OnBoardingActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pendingIntent =PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
