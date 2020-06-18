@@ -6,11 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
-import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -18,7 +16,6 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.leo.simplearcloader.SimpleArcLoader
 import kotlinx.android.synthetic.main.activity_help_line_no.*
-import kotlinx.android.synthetic.main.help_no_list.*
 import org.json.JSONException
 
 class HelpLineNoActivity : AppCompatActivity() {
