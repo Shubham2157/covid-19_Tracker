@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
+        android:background="@drawable/bg_creme_de_peche"
         android:weightSum="2"
         >
         <org.eazegraph.lib.charts.PieChart

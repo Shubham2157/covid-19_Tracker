@@ -40,7 +40,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_help_no"
         android:layout_width="match_parent"
-        android:layout_height="592dp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="2dp"
