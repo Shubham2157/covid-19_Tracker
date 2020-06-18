@@ -134,6 +134,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/bg_creme_de_peche"
 
             >
 
@@ -473,9 +474,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
-        android:background="@color/card"
+        android:background="@drawable/bd_cerulean_blue"
         android:text="Track countries"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         android:padding="5dp"
         android:onClick="goTrackCountries"/>

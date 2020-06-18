@@ -61,7 +61,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="#76D4D7D7"
+                        android:background="@drawable/bg_creme_de_peche"
                         android:orientation="vertical">
 
                         <TextView
@@ -102,7 +102,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="#76D4D7D7"
+                        android:background="@drawable/bg_creme_de_peche"
                         android:orientation="vertical">
 
                         <TextView
@@ -152,7 +152,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="#76D4D7D7"
+                        android:background="@drawable/bg_creme_de_peche"
                         android:orientation="vertical">
 
                         <TextView
@@ -194,7 +194,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="#76D4D7D7"
+                        android:background="@drawable/bg_creme_de_peche"
                         android:orientation="vertical">
 
                         <TextView
@@ -246,7 +246,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="@color/card"
+                        android:background="@drawable/bd_cerulean_blue"
                         android:orientation="vertical">
 
                         <TextView
@@ -279,7 +279,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="@color/card"
+                        android:background="@drawable/bd_cerulean_blue"
                         android:orientation="vertical">
 
                         <TextView
@@ -319,7 +319,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="@color/card"
+                        android:background="@drawable/bd_cerulean_blue"
                         android:orientation="vertical">
 
                         <TextView
@@ -351,7 +351,7 @@
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="@color/card"
+                        android:background="@drawable/bd_cerulean_blue"
                         android:orientation="vertical">
 
                         <TextView
@@ -393,7 +393,7 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:gravity="center"
-                        android:background="@color/card"
+                        android:background="@drawable/bd_cerulean_blue"
                         android:orientation="vertical">
 
                         <TextView
@@ -426,7 +426,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="fill_vertical"
                         android:layout_margin="10dp"
-                        android:background="@color/card"
+                        android:background="@drawable/bd_cerulean_blue"
                         android:gravity="center"
                         android:orientation="vertical">
 
