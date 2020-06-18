@@ -70,7 +70,7 @@
                     android:orientation="vertical"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_green"
+                    android:background="@drawable/bg_red"
                     android:layout_width="match_parent"
                     android:layout_height="120dp">
 
@@ -143,7 +143,7 @@
                     android:orientation="vertical"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_green"
+                    android:background="@drawable/bg_orange"
                     android:layout_width="match_parent"
                     android:layout_height="120dp">
 
@@ -191,7 +191,7 @@
                     android:orientation="vertical"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_green"
+                    android:background="@drawable/bg_greenery"
                     android:layout_width="match_parent"
                     android:layout_height="120dp">
 
@@ -227,7 +227,7 @@
                     android:orientation="vertical"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_green"
+                    android:background="@drawable/bg_honeysucle"
                     android:layout_width="match_parent"
                     android:layout_height="120dp">
 
@@ -264,7 +264,7 @@
                     android:orientation="vertical"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/bg_green"
+                    android:background="@drawable/bd_cerulean_blue"
                     android:layout_width="match_parent"
                     android:layout_height="120dp">
 
