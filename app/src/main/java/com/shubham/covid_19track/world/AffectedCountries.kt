@@ -17,6 +17,8 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.leo.simplearcloader.SimpleArcLoader
 import com.shubham.covid_19track.R
+import kotlinx.android.synthetic.main.activity_affected_countries.*
+import kotlinx.android.synthetic.main.activity_help_line_no.*
 import org.json.JSONArray
 import org.json.JSONException
 import java.util.ArrayList
@@ -25,7 +27,8 @@ class AffectedCountries : AppCompatActivity() {
 
     var edtSearch: EditText? = null
     var listView: ListView? = null
-    var simpleArcLoader: SimpleArcLoader? = null
+    private val simpleArcLoader: SimpleArcLoader
+        get() = loader
     var countryModel: CountryModel? = null
     var myCustomAdapter: MyCustomAdapter? = null
 
@@ -36,19 +39,19 @@ class AffectedCountries : AppCompatActivity() {
 
         edtSearch = findViewById(R.id.edtSearch)
         listView = findViewById(R.id.listView)
-        simpleArcLoader = findViewById(R.id.loader)
+
         supportActionBar!!.title = "Affected Countries"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
+
         fetchData()
-        listView!!.setOnItemClickListener(AdapterView.OnItemClickListener { parent, view, position, id ->
-            startActivity(
-                Intent(applicationContext, DetailActivity::class.java).putExtra(
-                    "position",
-                    position
-                )
-            )
-        })
+
+        listView!!.onItemClickListener =
+            AdapterView.OnItemClickListener { parent, view, position, id ->
+                startActivity(Intent(applicationContext, DetailActivity::class.java)
+                    .putExtra("position", position))
+            }
+
         edtSearch!!.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
@@ -66,8 +69,10 @@ class AffectedCountries : AppCompatActivity() {
     }
 
     private fun fetchData() {
+
+        simpleArcLoader.start()
+
         val url = "https://corona.lmao.ninja/v2/countries/"
-        simpleArcLoader!!.start()
         val request = StringRequest(Request.Method.GET, url,
             Response.Listener { response ->
                 try {
@@ -89,16 +94,18 @@ class AffectedCountries : AppCompatActivity() {
                     }
                     myCustomAdapter = MyCustomAdapter(this@AffectedCountries, countryModelsList)
                     listView!!.adapter = myCustomAdapter
-                    simpleArcLoader!!.stop()
-                    simpleArcLoader!!.visibility = View.GONE
+
+                    simpleArcLoader.stop()
+                    simpleArcLoader.visibility = View.GONE
+
                 } catch (e: JSONException) {
                     e.printStackTrace()
-                    simpleArcLoader!!.stop()
-                    simpleArcLoader!!.visibility = View.GONE
+                    simpleArcLoader.stop()
+                    simpleArcLoader.visibility = View.GONE
                 }
             }, Response.ErrorListener { error ->
-                simpleArcLoader!!.stop()
-                simpleArcLoader!!.visibility = View.GONE
+                simpleArcLoader.stop()
+                simpleArcLoader.visibility = View.GONE
                 Toast.makeText(this@AffectedCountries, error.message, Toast.LENGTH_SHORT).show()
             })
         val requestQueue = Volley.newRequestQueue(this)

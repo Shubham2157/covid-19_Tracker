@@ -14,6 +14,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.leo.simplearcloader.SimpleArcLoader
 import com.shubham.covid_19track.R
+import kotlinx.android.synthetic.main.activity_main.*
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 import org.json.JSONException
@@ -29,9 +30,15 @@ class MainActivity : AppCompatActivity() {
     var tvTotalDeaths: TextView? = null
     var tvTodayDeaths: TextView? = null
     var tvAffectedCountries: TextView? = null
-    var simpleArcLoader: SimpleArcLoader? = null
-    var scrollView: ScrollView? = null
-    var pieChart: PieChart? = null
+
+    private val simpleArcLoader: SimpleArcLoader
+        get() = loader
+
+    val scrollView: ScrollView
+        get() = scrollStats
+
+    val pieChart: PieChart
+    get() = piechart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +52,8 @@ class MainActivity : AppCompatActivity() {
         tvTotalDeaths = findViewById(R.id.tvTotalDeaths)
         tvTodayDeaths = findViewById(R.id.tvTodayDeaths)
         tvAffectedCountries = findViewById(R.id.tvAffectedCountries)
-        simpleArcLoader = findViewById(R.id.loader)
-        scrollView = findViewById(R.id.scrollStats)
-        pieChart = findViewById(R.id.piechart)
+
+
         fetchData()
 
     }

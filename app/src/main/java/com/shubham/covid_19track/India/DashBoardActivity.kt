@@ -34,10 +34,16 @@ class DashBoardActivity : AppCompatActivity() {
     private  var card_state:CardView? = null
     private  var card_district:CardView? = null
     private  var card_pia:CardView? = null
-    private var requestQueue: RequestQueue? = null
+
+    private val requestQueue  by lazy {
+        Volley.newRequestQueue(this)
+    }
+
     private var response1: JSONObject? = null
 
-    var pieChart: PieChart? = null
+    val pieChart: PieChart
+        get() = piechart
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,11 +61,9 @@ class DashBoardActivity : AppCompatActivity() {
         card_state = findViewById(R.id.card_state)
         card_district = findViewById(R.id.card_district)
         card_pia = findViewById(R.id.card_pia)
-        pieChart = findViewById(R.id.piechart)
 
 
 
-        requestQueue = Volley.newRequestQueue(this)
         parseJson()
 
         card_today!!.setOnClickListener {
@@ -112,7 +116,7 @@ class DashBoardActivity : AppCompatActivity() {
             sheetView.piechart.addPieSlice(PieModel("Recoverd", txt_recovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
             sheetView.piechart.addPieSlice(PieModel("Deaths", txt_deaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
             sheetView.piechart.addPieSlice(PieModel("Cases", txt_active!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
-            pieChart!!.startAnimation()
+            pieChart.startAnimation()
             mBottomSheetDialog.show()
 
 

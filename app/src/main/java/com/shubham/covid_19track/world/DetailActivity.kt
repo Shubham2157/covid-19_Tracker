@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
 import com.shubham.covid_19track.R
+import kotlinx.android.synthetic.main.activity_detail.*
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 
@@ -20,7 +21,9 @@ class DetailActivity : AppCompatActivity() {
     var tvTodayCases: TextView? = null
     var tvTotalDeaths: TextView? = null
     var tvTodayDeaths: TextView? = null
-    var pieChart: PieChart? = null
+
+    val pieChart: PieChart
+        get() = piechart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +42,7 @@ class DetailActivity : AppCompatActivity() {
         tvTodayCases = findViewById(R.id.tvTodayCases)
         tvTotalDeaths = findViewById(R.id.tvDeath)
         tvTodayDeaths = findViewById(R.id.tvTodayDeaths)
-        pieChart = findViewById(R.id.piechart)
+
 
         tvCountry!!.setText(AffectedCountries.countryModelsList[positionCountry].country)
         tvCases!!.setText(AffectedCountries.countryModelsList[positionCountry].cases)
