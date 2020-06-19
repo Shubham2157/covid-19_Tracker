@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/f"
-        android:text="Diatrict wise zone"
+        android:text="District wise zone"
         android:textColor="#FFF"
         android:textColorLink="#FFFFFF"
         android:textSize="27sp"

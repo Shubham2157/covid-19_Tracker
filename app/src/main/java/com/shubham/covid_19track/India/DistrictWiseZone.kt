@@ -15,29 +15,37 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.leo.simplearcloader.SimpleArcLoader
 import com.shubham.covid_19track.R
+import kotlinx.android.synthetic.main.activity_district_wise_zone.*
+import kotlinx.android.synthetic.main.activity_help_line_no.*
+import kotlinx.android.synthetic.main.activity_help_line_no.progressBar
 import org.json.JSONException
 
 class DistrictWiseZone : AppCompatActivity() {
 
-    private var recyclerView: RecyclerView? = null
-    private var requestQueue: RequestQueue? = null
-    var simpleArcLoader: SimpleArcLoader? = null
+    private val recyclerView: RecyclerView
+        get() = recycler1
+
+    private val requestQueue  by lazy {
+        Volley.newRequestQueue(this)
+    }
+
+    private val simpleArcLoader: SimpleArcLoader
+        get() = progressBar
+
     private lateinit var zoneData: Array<ZoneData>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_district_wise_zone)
 
-        recyclerView = findViewById(R.id.recycler1)
-        simpleArcLoader = findViewById(R.id.progressBar)
-        recyclerView!!.setLayoutManager(LinearLayoutManager(this))
-        requestQueue = Volley.newRequestQueue(this)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
         parseJson()
     }
 
     private fun parseJson() {
 
-        simpleArcLoader!!.start()
+        simpleArcLoader.start()
 
         val url = "https://api.covid19india.org/zones.json"
         val request = JsonObjectRequest(
@@ -51,20 +59,20 @@ class DistrictWiseZone : AppCompatActivity() {
                         array.toString(),
                         Array<ZoneData>::class.java
                     )
-                    simpleArcLoader!!.stop()
-                    simpleArcLoader!!.visibility = View.GONE
+                    simpleArcLoader.stop()
+                    simpleArcLoader.visibility = View.GONE
 
-                    recyclerView?.adapter = DistrictZoneAdapter(zoneData)
+                    recyclerView.adapter = DistrictZoneAdapter(zoneData)
                 } catch (e: JSONException) {
                     e.printStackTrace()
-                    simpleArcLoader!!.stop()
-                    simpleArcLoader!!.visibility = View.GONE
+                    simpleArcLoader.stop()
+                    simpleArcLoader.visibility = View.GONE
 
                 }
             },
             Response.ErrorListener {error ->
-                simpleArcLoader!!.stop()
-                simpleArcLoader!!.visibility = View.GONE
+                simpleArcLoader.stop()
+                simpleArcLoader.visibility = View.GONE
                 Toast.makeText(this@DistrictWiseZone, error.message, Toast.LENGTH_SHORT).show()
 
             }
