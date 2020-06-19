@@ -74,24 +74,24 @@ class MainActivity : AppCompatActivity() {
                         tvTotalDeaths!!.text = jsonObject.getString("deaths")
                         tvTodayDeaths!!.text = jsonObject.getString("todayDeaths")
                         tvAffectedCountries!!.text = jsonObject.getString("affectedCountries")
-                        pieChart!!.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
-                        pieChart!!.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
-                        pieChart!!.addPieSlice(PieModel("Deaths", tvTotalDeaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
-                        pieChart!!.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
-                        pieChart!!.startAnimation()
-                        simpleArcLoader!!.stop()
-                        simpleArcLoader!!.visibility = View.GONE
-                        scrollView!!.visibility = View.VISIBLE
+                        pieChart.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
+                        pieChart.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
+                        pieChart.addPieSlice(PieModel("Deaths", tvTotalDeaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
+                        pieChart.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
+                        pieChart.startAnimation()
+                        simpleArcLoader.stop()
+                        simpleArcLoader.visibility = View.GONE
+                        scrollView.visibility = View.VISIBLE
                     } catch (e: JSONException) {
                         e.printStackTrace()
-                        simpleArcLoader!!.stop()
-                        simpleArcLoader!!.visibility = View.GONE
-                        scrollView!!.visibility = View.VISIBLE
+                        simpleArcLoader.stop()
+                        simpleArcLoader.visibility = View.GONE
+                        scrollView.visibility = View.VISIBLE
                     }
                 }, Response.ErrorListener { error ->
-            simpleArcLoader!!.stop()
-            simpleArcLoader!!.visibility = View.GONE
-            scrollView!!.visibility = View.VISIBLE
+            simpleArcLoader.stop()
+            simpleArcLoader.visibility = View.GONE
+            scrollView.visibility = View.VISIBLE
             Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()
         })
         val requestQueue = Volley.newRequestQueue(this)

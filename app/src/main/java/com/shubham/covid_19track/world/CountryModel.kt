@@ -11,8 +11,6 @@ class CountryModel {
     var active: String? = null
     var critical: String? = null
 
-    constructor() {}
-
 
     constructor(flag: String?, country: String?, cases: String?, todayCases: String?, deaths: String?, todayDeaths: String?, recovered: String?, active: String?, critical: String?) {
         this.flag = flag

@@ -31,7 +31,7 @@ class DetailActivity : AppCompatActivity() {
 
         val intent = intent
         positionCountry = intent.getIntExtra("position", 0)
-        supportActionBar!!.setTitle("Details of " + AffectedCountries.countryModelsList[positionCountry].country)
+        supportActionBar!!.title = "Details of " + AffectedCountries.countryModelsList[positionCountry].country
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         tvCountry = findViewById(R.id.tvCountr)
@@ -44,20 +44,20 @@ class DetailActivity : AppCompatActivity() {
         tvTodayDeaths = findViewById(R.id.tvTodayDeaths)
 
 
-        tvCountry!!.setText(AffectedCountries.countryModelsList[positionCountry].country)
-        tvCases!!.setText(AffectedCountries.countryModelsList[positionCountry].cases)
-        tvRecovered!!.setText(AffectedCountries.countryModelsList[positionCountry].recovered)
-        tvCritical!!.setText(AffectedCountries.countryModelsList[positionCountry].critical)
-        tvActive!!.setText(AffectedCountries.countryModelsList[positionCountry].active)
-        tvTodayCases!!.setText(AffectedCountries.countryModelsList[positionCountry].todayCases)
-        tvTotalDeaths!!.setText(AffectedCountries.countryModelsList[positionCountry].deaths)
-        tvTodayDeaths!!.setText(AffectedCountries.countryModelsList[positionCountry].todayDeaths)
+        tvCountry!!.text = AffectedCountries.countryModelsList[positionCountry].country
+        tvCases!!.text = AffectedCountries.countryModelsList[positionCountry].cases
+        tvRecovered!!.text = AffectedCountries.countryModelsList[positionCountry].recovered
+        tvCritical!!.text = AffectedCountries.countryModelsList[positionCountry].critical
+        tvActive!!.text = AffectedCountries.countryModelsList[positionCountry].active
+        tvTodayCases!!.text = AffectedCountries.countryModelsList[positionCountry].todayCases
+        tvTotalDeaths!!.text = AffectedCountries.countryModelsList[positionCountry].deaths
+        tvTodayDeaths!!.text = AffectedCountries.countryModelsList[positionCountry].todayDeaths
 
-        pieChart!!.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
-        pieChart!!.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
-        pieChart!!.addPieSlice(PieModel("Deaths", tvTotalDeaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
-        pieChart!!.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
-        pieChart!!.startAnimation()
+        pieChart.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
+        pieChart.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
+        pieChart.addPieSlice(PieModel("Deaths", tvTotalDeaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
+        pieChart.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
+        pieChart.startAnimation()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -1,7 +1,6 @@
 package com.shubham.covid_19track.world
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,6 +10,7 @@ import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -18,10 +18,9 @@ import com.android.volley.toolbox.Volley
 import com.leo.simplearcloader.SimpleArcLoader
 import com.shubham.covid_19track.R
 import kotlinx.android.synthetic.main.activity_affected_countries.*
-import kotlinx.android.synthetic.main.activity_help_line_no.*
 import org.json.JSONArray
 import org.json.JSONException
-import java.util.ArrayList
+import java.util.*
 
 class AffectedCountries : AppCompatActivity() {
 
