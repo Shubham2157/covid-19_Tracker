@@ -1,4 +1,4 @@
-package com.shubham.covid_19track;
+package com.shubham.covid_19track.websites;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -22,6 +22,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.shubham.covid_19track.R;
 
 public class India_Govt_WebActivity extends AppCompatActivity {
 

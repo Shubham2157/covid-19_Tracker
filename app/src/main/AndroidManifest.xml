@@ -32,10 +32,10 @@
         <activity android:name=".HelpLineNoActivity" />
         <activity android:name=".AboutUsActivity" />
         <activity
-            android:name=".India_Govt_WebActivity"
+            android:name=".websites.India_Govt_WebActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".WhoActivity"
+            android:name=".websites.WhoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".India.DistrictWiseZone" />
         <activity

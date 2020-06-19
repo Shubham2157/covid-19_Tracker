@@ -1,4 +1,4 @@
-package com.shubham.covid_19track;
+package com.shubham.covid_19track.websites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+
+import com.shubham.covid_19track.R;
 
 public class WhoActivity extends AppCompatActivity {
 

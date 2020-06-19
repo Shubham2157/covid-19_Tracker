@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.shubham.covid_19track.India.DashBoardActivity
+import com.shubham.covid_19track.websites.India_Govt_WebActivity
+import com.shubham.covid_19track.websites.WhoActivity
 import com.shubham.covid_19track.world.MainActivity
 import kotlinx.android.synthetic.main.activity_on_boarding.*
 
