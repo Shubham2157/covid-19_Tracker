@@ -22,15 +22,6 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
-    var tvCases: TextView? = null
-    var tvRecovered: TextView? = null
-    var tvCritical: TextView? = null
-    var tvActive: TextView? = null
-    var tvTodayCases: TextView? = null
-    var tvTotalDeaths: TextView? = null
-    var tvTodayDeaths: TextView? = null
-    var tvAffectedCountries: TextView? = null
-
     private val simpleArcLoader: SimpleArcLoader
         get() = loader
 
@@ -44,16 +35,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tvCases = findViewById(R.id.tvCases)
-        tvRecovered = findViewById(R.id.tvRecovered)
-        tvCritical = findViewById(R.id.tvCritical)
-        tvActive = findViewById(R.id.tvActive)
-        tvTodayCases = findViewById(R.id.tvTodayCases)
-        tvTotalDeaths = findViewById(R.id.tvTotalDeaths)
-        tvTodayDeaths = findViewById(R.id.tvTodayDeaths)
-        tvAffectedCountries = findViewById(R.id.tvAffectedCountries)
-
-
         fetchData()
 
     }
@@ -61,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun fetchData() {
         val url = "https://corona.lmao.ninja/v2/all/"
-        simpleArcLoader!!.start()
+        simpleArcLoader.start()
         val request = StringRequest(Request.Method.GET, url,
                 Response.Listener { response ->
                     try {
@@ -74,24 +55,18 @@ class MainActivity : AppCompatActivity() {
                         tvTotalDeaths!!.text = jsonObject.getString("deaths")
                         tvTodayDeaths!!.text = jsonObject.getString("todayDeaths")
                         tvAffectedCountries!!.text = jsonObject.getString("affectedCountries")
-                        pieChart.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
-                        pieChart.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
-                        pieChart.addPieSlice(PieModel("Deaths", tvTotalDeaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
-                        pieChart.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
-                        pieChart.startAnimation()
-                        simpleArcLoader.stop()
-                        simpleArcLoader.visibility = View.GONE
-                        scrollView.visibility = View.VISIBLE
+
+                        piaChart()
+                        stoploader()
+
                     } catch (e: JSONException) {
                         e.printStackTrace()
-                        simpleArcLoader.stop()
-                        simpleArcLoader.visibility = View.GONE
-                        scrollView.visibility = View.VISIBLE
+                        stoploader()
                     }
                 }, Response.ErrorListener { error ->
-            simpleArcLoader.stop()
-            simpleArcLoader.visibility = View.GONE
-            scrollView.visibility = View.VISIBLE
+
+                stoploader()
+
             Toast.makeText(this@MainActivity, error.message, Toast.LENGTH_SHORT).show()
         })
         val requestQueue = Volley.newRequestQueue(this)
@@ -101,4 +76,20 @@ class MainActivity : AppCompatActivity() {
     fun goTrackCountries(view: View?) {
         startActivity(Intent(applicationContext, AffectedCountries::class.java))
     }
+
+
+    private fun piaChart(){
+        pieChart.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
+        pieChart.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
+        pieChart.addPieSlice(PieModel("Deaths", tvTotalDeaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
+        pieChart.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
+        pieChart.startAnimation()
+    }
+
+    private fun stoploader(){
+        simpleArcLoader.stop()
+        simpleArcLoader.visibility = View.GONE
+        scrollView.visibility = View.VISIBLE
+    }
+
 }

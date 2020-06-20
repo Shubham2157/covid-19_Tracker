@@ -7,8 +7,6 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
-import android.widget.EditText
-import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
@@ -24,20 +22,15 @@ import java.util.*
 
 class AffectedCountries : AppCompatActivity() {
 
-    var edtSearch: EditText? = null
-    var listView: ListView? = null
     private val simpleArcLoader: SimpleArcLoader
         get() = loader
+
     var countryModel: CountryModel? = null
     var myCustomAdapter: MyCustomAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_affected_countries)
-
-
-        edtSearch = findViewById(R.id.edtSearch)
-        listView = findViewById(R.id.listView)
 
         supportActionBar!!.title = "Affected Countries"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -94,17 +87,14 @@ class AffectedCountries : AppCompatActivity() {
                     myCustomAdapter = MyCustomAdapter(this@AffectedCountries, countryModelsList)
                     listView!!.adapter = myCustomAdapter
 
-                    simpleArcLoader.stop()
-                    simpleArcLoader.visibility = View.GONE
+                    stopLoder()
 
                 } catch (e: JSONException) {
                     e.printStackTrace()
-                    simpleArcLoader.stop()
-                    simpleArcLoader.visibility = View.GONE
+                    stopLoder()
                 }
             }, Response.ErrorListener { error ->
-                simpleArcLoader.stop()
-                simpleArcLoader.visibility = View.GONE
+               stopLoder()
                 Toast.makeText(this@AffectedCountries, error.message, Toast.LENGTH_SHORT).show()
             })
         val requestQueue = Volley.newRequestQueue(this)
@@ -113,6 +103,11 @@ class AffectedCountries : AppCompatActivity() {
 
     companion object {
         var countryModelsList: MutableList<CountryModel> = ArrayList()
+    }
+
+    private fun stopLoder(){
+        simpleArcLoader.stop()
+        simpleArcLoader.visibility = View.GONE
     }
 
 }

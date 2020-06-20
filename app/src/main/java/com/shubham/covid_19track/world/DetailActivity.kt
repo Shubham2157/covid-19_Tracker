@@ -13,14 +13,6 @@ import org.eazegraph.lib.models.PieModel
 class DetailActivity : AppCompatActivity() {
 
     private var positionCountry = 0
-    var tvCountry: TextView? = null
-    var tvCases: TextView? = null
-    var tvRecovered: TextView? = null
-    var tvCritical: TextView? = null
-    var tvActive: TextView? = null
-    var tvTodayCases: TextView? = null
-    var tvTotalDeaths: TextView? = null
-    var tvTodayDeaths: TextView? = null
 
     val pieChart: PieChart
         get() = piechart
@@ -34,34 +26,34 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar!!.title = "Details of " + AffectedCountries.countryModelsList[positionCountry].country
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
-        tvCountry = findViewById(R.id.tvCountr)
-        tvCases = findViewById(R.id.tvCases)
-        tvRecovered = findViewById(R.id.tvRecovered)
-        tvCritical = findViewById(R.id.tvCritical)
-        tvActive = findViewById(R.id.tvActive)
-        tvTodayCases = findViewById(R.id.tvTodayCases)
-        tvTotalDeaths = findViewById(R.id.tvDeath)
-        tvTodayDeaths = findViewById(R.id.tvTodayDeaths)
 
-
-        tvCountry!!.text = AffectedCountries.countryModelsList[positionCountry].country
+        tvCountr!!.text = AffectedCountries.countryModelsList[positionCountry].country
         tvCases!!.text = AffectedCountries.countryModelsList[positionCountry].cases
         tvRecovered!!.text = AffectedCountries.countryModelsList[positionCountry].recovered
         tvCritical!!.text = AffectedCountries.countryModelsList[positionCountry].critical
         tvActive!!.text = AffectedCountries.countryModelsList[positionCountry].active
         tvTodayCases!!.text = AffectedCountries.countryModelsList[positionCountry].todayCases
-        tvTotalDeaths!!.text = AffectedCountries.countryModelsList[positionCountry].deaths
+        tvDeath!!.text = AffectedCountries.countryModelsList[positionCountry].deaths
         tvTodayDeaths!!.text = AffectedCountries.countryModelsList[positionCountry].todayDeaths
 
-        pieChart.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
-        pieChart.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
-        pieChart.addPieSlice(PieModel("Deaths", tvTotalDeaths!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
-        pieChart.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
-        pieChart.startAnimation()
+        piaChart()
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) finish()
         return super.onOptionsItemSelected(item)
     }
+
+    private fun piaChart(){
+
+        pieChart.addPieSlice(PieModel("Cases", tvCases!!.text.toString().toInt().toFloat(), Color.parseColor("#F50005")))
+        pieChart.addPieSlice(PieModel("Recoverd", tvRecovered!!.text.toString().toInt().toFloat(), Color.parseColor("#66BB6A")))
+        pieChart.addPieSlice(PieModel("Deaths", tvDeath!!.text.toString().toInt().toFloat(), Color.parseColor("#EF5350")))
+        pieChart.addPieSlice(PieModel("Active", tvActive!!.text.toString().toInt().toFloat(), Color.parseColor("#29B6F6")))
+        pieChart.startAnimation()
+
+    }
+
 }
