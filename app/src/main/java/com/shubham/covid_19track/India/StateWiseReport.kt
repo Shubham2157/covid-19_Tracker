@@ -15,13 +15,21 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.leo.simplearcloader.SimpleArcLoader
 import com.shubham.covid_19track.R
+import kotlinx.android.synthetic.main.activity_state_wise_report.*
 import org.json.JSONException
 
 class StateWiseReport : AppCompatActivity() {
 
-    private var recyclerView: RecyclerView? = null
-    private var requestQueue: RequestQueue? = null
-    var simpleArcLoader: SimpleArcLoader? = null
+    private val recyclerView: RecyclerView
+        get() = recycler
+
+    private val requestQueue  by lazy {
+        Volley.newRequestQueue(this)
+    }
+
+    private val simpleArcLoader: SimpleArcLoader
+        get() = progressBar
+
     private lateinit var stateData: Array<StateData>
 
 
@@ -29,16 +37,15 @@ class StateWiseReport : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_state_wise_report)
 
-        recyclerView = findViewById(R.id.recycler)
-        simpleArcLoader = findViewById(R.id.progressBar)
-        recyclerView!!.setLayoutManager(LinearLayoutManager(this))
-        requestQueue = Volley.newRequestQueue(this)
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
         parseJson()
     }
 
     private fun parseJson() {
 
-        simpleArcLoader!!.start()
+        simpleArcLoader.start()
 
         val url = "https://api.covid19india.org/data.json"
         val request = JsonObjectRequest(
@@ -53,19 +60,19 @@ class StateWiseReport : AppCompatActivity() {
                         Array<StateData>::class.java
                     )
 
-                    simpleArcLoader!!.stop()
-                    simpleArcLoader!!.visibility = View.GONE
+                    simpleArcLoader.stop()
+                    simpleArcLoader.visibility = View.GONE
 
-                    recyclerView?.adapter = myAdapter(stateData)
+                    recyclerView.adapter = myAdapter(stateData)
                 } catch (e: JSONException) {
                     e.printStackTrace()
-                    simpleArcLoader!!.stop()
-                    simpleArcLoader!!.visibility = View.GONE
+                    simpleArcLoader.stop()
+                    simpleArcLoader.visibility = View.GONE
                 }
             },
             Response.ErrorListener {error ->
-                simpleArcLoader!!.stop()
-                simpleArcLoader!!.visibility = View.GONE
+                simpleArcLoader.stop()
+                simpleArcLoader.visibility = View.GONE
 
                 Toast.makeText(this@StateWiseReport, error.message, Toast.LENGTH_SHORT).show()
 
