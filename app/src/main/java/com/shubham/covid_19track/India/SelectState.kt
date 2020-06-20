@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.shubham.covid_19track.R
+import kotlinx.android.synthetic.main.activity_select_state.*
 
 class SelectState : AppCompatActivity() {
-    private var recycler_select_state: RecyclerView? = null
-
+    private val recyclerView: RecyclerView
+        get() = recycler_select_state
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,10 +53,8 @@ class SelectState : AppCompatActivity() {
             "Lakshadweep",
             "Puducherry"
         )
-
-        recycler_select_state = findViewById(R.id.recycler_select_state)
-        recycler_select_state!!.setLayoutManager(LinearLayoutManager(this))
-        recycler_select_state!!.setAdapter(StatesAdapter(stateName, applicationContext))
+        recycler_select_state!!.layoutManager = LinearLayoutManager(this)
+        recycler_select_state!!.adapter = StatesAdapter(stateName, applicationContext)
 
     }
 }
