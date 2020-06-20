@@ -14,17 +14,22 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.leo.simplearcloader.SimpleArcLoader
 import com.shubham.covid_19track.R
+import kotlinx.android.synthetic.main.activity_district_wise.*
 import org.json.JSONException
 
 class DistrictWise : AppCompatActivity() {
 
-    private var districtRecycler: RecyclerView? = null
-    private var requestQueue: RequestQueue? = null
+
+    private val requestQueue  by lazy {
+        Volley.newRequestQueue(this)
+    }
+
+
     private var stateName: String? = null
-    private var txt_state_name: TextView? = null
-    private  var txt_no_cases:TextView? = null
-    var simpleArcLoader: SimpleArcLoader? = null
-    private var no_cases_animation: LottieAnimationView? = null
+
+    private val simpleArcLoader: SimpleArcLoader
+        get() = progressBar
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +37,6 @@ class DistrictWise : AppCompatActivity() {
         setContentView(R.layout.activity_district_wise)
 
 
-        districtRecycler = findViewById(R.id.districtRecycler)
-        txt_state_name = findViewById(R.id.txt_state_name)
-        simpleArcLoader = findViewById(R.id.progressBar)
-        no_cases_animation = findViewById(R.id.no_cases_animation)
-        txt_no_cases = findViewById(R.id.txt_no_cases)
 
         no_cases_animation!!.visibility = View.INVISIBLE
         txt_no_cases!!.visibility = View.INVISIBLE
@@ -44,13 +44,13 @@ class DistrictWise : AppCompatActivity() {
         districtRecycler!!.layoutManager = LinearLayoutManager(this)
         stateName = intent.getStringExtra("stateName")
         txt_state_name!!.text = stateName
-        requestQueue = Volley.newRequestQueue(this)
+
         parseJson()
 
     }
     private fun parseJson() {
 
-        simpleArcLoader!!.start()
+        simpleArcLoader.start()
 
         val url = "https://api.covid19india.org/state_district_wise.json"
         val request = JsonObjectRequest(
@@ -68,8 +68,8 @@ class DistrictWise : AppCompatActivity() {
                         cases[i] = districtData.getJSONObject(district[i]).getString("confirmed")
                     }
 
-                    simpleArcLoader!!.stop()
-                    simpleArcLoader!!.visibility = View.GONE
+                    simpleArcLoader.stop()
+                    simpleArcLoader.visibility = View.GONE
 
 
                     districtRecycler!!.adapter = DistrictAdapter(district, cases)
@@ -78,13 +78,13 @@ class DistrictWise : AppCompatActivity() {
                     no_cases_animation!!.visibility = View.VISIBLE
                     txt_no_cases!!.visibility = View.VISIBLE
 
-                    simpleArcLoader!!.stop()
-                    simpleArcLoader!!.visibility = View.GONE
+                    simpleArcLoader.stop()
+                    simpleArcLoader.visibility = View.GONE
 
                 }
             }, Response.ErrorListener { error -> error.printStackTrace()
-                simpleArcLoader!!.stop()
-                simpleArcLoader!!.visibility = View.GONE
+                simpleArcLoader.stop()
+                simpleArcLoader.visibility = View.GONE
             })
         requestQueue!!.add(request)
     }
