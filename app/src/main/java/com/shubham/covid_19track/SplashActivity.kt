@@ -9,17 +9,16 @@ import android.os.Handler
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
-    private var txt_error: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        txt_error = findViewById(R.id.txt_error)
-        txt_error!!.setVisibility(View.INVISIBLE)
+        txt_error!!.visibility = View.INVISIBLE
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             confirmInternetConnection(4150)
@@ -32,10 +31,10 @@ class SplashActivity : AppCompatActivity() {
             }, 4150)
         }
 
-        txt_error!!.setOnClickListener(View.OnClickListener {
-            txt_error!!.setVisibility(View.INVISIBLE)
+        txt_error!!.setOnClickListener {
+            txt_error!!.visibility = View.INVISIBLE
             confirmInternetConnection(500)
-        })
+        }
     }
     private fun confirmInternetConnection(delay: Int) {
         val isConnected = checkForInternetConnection()
