@@ -23,18 +23,6 @@ import org.json.JSONObject
 
 class DashBoardActivity : AppCompatActivity() {
 
-    private var txt_total: TextView? = null
-    private  var txt_active:TextView? = null
-    private  var txt_recovered:TextView? = null
-    private  var txt_deaths:TextView? = null
-    private  var txt_updated:TextView? = null
-    private var card_today: CardView? = null
-    private  var card_tests:CardView? = null
-    private  var card_about:CardView? = null
-    private  var card_state:CardView? = null
-    private  var card_district:CardView? = null
-    private  var card_pia:CardView? = null
-
     private val requestQueue  by lazy {
         Volley.newRequestQueue(this)
     }
@@ -48,21 +36,6 @@ class DashBoardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board)
-
-
-        txt_total = findViewById(R.id.txt_total)
-        txt_active = findViewById(R.id.txt_active)
-        txt_recovered = findViewById(R.id.txt_recovered)
-        txt_deaths = findViewById(R.id.txt_deaths)
-        txt_updated = findViewById(R.id.txt_updated)
-        card_today = findViewById(R.id.card_today)
-        card_tests = findViewById(R.id.card_tests)
-        card_about = findViewById(R.id.card_zone)
-        card_state = findViewById(R.id.card_state)
-        card_district = findViewById(R.id.card_district)
-        card_pia = findViewById(R.id.card_pia)
-
-
 
         parseJson()
 
