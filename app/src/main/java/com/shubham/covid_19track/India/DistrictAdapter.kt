@@ -8,23 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.shubham.covid_19track.R
 
-class DistrictAdapter(
-    var districts: Array<String?>,
-    var cases: Array<String?>
-) : RecyclerView.Adapter<DistrictAdapter.myViewHolder>() {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): myViewHolder {
+class DistrictAdapter(var districts: Array<String?>, var cases: Array<String?>) : RecyclerView.Adapter<DistrictAdapter.myViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.district_list, parent, false)
         return myViewHolder(view)
     }
 
-    override fun onBindViewHolder(
-        holder: myViewHolder,
-        position: Int
-    ) {
+    override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         val districtName = districts[position]
         val confirmedCases = cases[position]
         holder.txt_district_name.text = districtName
