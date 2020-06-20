@@ -11,10 +11,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.shubham.covid_19track.R
 
 class StatesAdapter(private val stateName: Array<String>, private val mContext: Context) : RecyclerView.Adapter<StatesAdapter.myViewHolder>() {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): myViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.state_list, parent, false)
         return myViewHolder(view)

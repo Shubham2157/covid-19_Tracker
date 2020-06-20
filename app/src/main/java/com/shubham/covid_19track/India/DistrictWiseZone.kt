@@ -55,10 +55,7 @@ class DistrictWiseZone : AppCompatActivity() {
                     val array = response.getJSONArray("zones")
                     val gsonBuilder = GsonBuilder()
                     val gson: Gson = gsonBuilder.create()
-                    zoneData = gson.fromJson(
-                        array.toString(),
-                        Array<ZoneData>::class.java
-                    )
+                    zoneData = gson.fromJson(array.toString(), Array<ZoneData>::class.java)
                     simpleArcLoader.stop()
                     simpleArcLoader.visibility = View.GONE
 
