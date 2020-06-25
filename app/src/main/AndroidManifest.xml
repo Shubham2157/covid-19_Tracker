@@ -3,7 +3,6 @@
     package="com.shubham.covid_19track">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -29,36 +28,38 @@
 
         </service>
 
-        <activity android:name=".HelpLineNoActivity" />
-        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".HelpLineNoActivity"   android:screenOrientation="portrait" />
+        <activity android:name=".AboutUsActivity"   android:screenOrientation="portrait" />
         <activity
             android:name=".websites.India_Govt_WebActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".websites.WhoActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".India.DistrictWiseZone" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".India.DistrictWiseZone"  android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"   android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".India.DistrictWise" />
-        <activity android:name=".India.SelectState" />
-        <activity android:name=".India.StateWiseReport" />
-        <activity android:name=".India.TestsReport" />
-        <activity android:name=".India.TodayCases" />
-        <activity android:name=".India.DashBoardActivity" />
+        <activity android:name=".India.DistrictWise"   android:screenOrientation="portrait" />
+        <activity android:name=".India.SelectState"   android:screenOrientation="portrait" />
+        <activity android:name=".India.StateWiseReport"    android:screenOrientation="portrait"/>
+        <activity android:name=".India.TestsReport"  android:screenOrientation="portrait" />
+        <activity android:name=".India.TodayCases"  android:screenOrientation="portrait" />
+        <activity android:name=".India.DashBoardActivity"   android:screenOrientation="portrait"/>
         <activity
             android:name=".OnBoardingActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".world.DetailActivity" />
-        <activity android:name=".world.AffectedCountries" />
-        <activity android:name=".world.MainActivity" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"   android:screenOrientation="portrait" />
+        <activity android:name=".world.DetailActivity"   android:screenOrientation="portrait" />
+        <activity android:name=".world.AffectedCountries"   android:screenOrientation="portrait" />
+        <activity android:name=".world.MainActivity"  android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
